@@ -66,6 +66,10 @@ public class LinkedList {
 
             newNode.next = temp.next;
             temp.next = newNode;
+
+            if (temp == tail) {
+                tail = temp.next;
+            }
         }
     }
 
