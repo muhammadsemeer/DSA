@@ -55,13 +55,21 @@ public class LinkedList {
         if (pos == 0) {
             newNode.next = head;
             head = newNode;
+        } else if(head == null && pos != 0) {
+            System.out.println("List is empty, Choose 0 to insert first element or Alternative Options");
         } else {
             Node temp = head;
             int count = 0;
 
-            while (count < pos - 1) {
+            while (count < pos - 1 && temp != null) {
                 temp = temp.next;
                 count++;
+            }
+
+            if (temp == null) {
+                int currentCount = count();
+                System.out.println("Cannot Insert at this position, Current Last position is " + (currentCount - 1));
+                return;
             }
 
             newNode.next = temp.next;
