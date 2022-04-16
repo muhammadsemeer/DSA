@@ -40,6 +40,7 @@ public class Stack {
     public void pop() {
         if(top == null) {
             System.out.println("Stack Underflow");
+            return;
         }
 
         top = top.next;
